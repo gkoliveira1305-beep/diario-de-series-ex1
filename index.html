@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diário de Séries</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Diário de Séries</h1>
+  <p id="status">Carregando...</p>
+
+  <!-- Área de Filtros e Ordenação (R4, R5, R6) -->
+  <div class="filtros-container">
+    <label>
+      Filtrar status:
+      <select id="filtroStatus">
+        <option value="todas">Todas</option>
+        <option value="na_fila">Na fila</option>
+        <option value="assistindo">Assistindo</option>
+        <option value="concluida">Concluída</option>
+      </select>
+    </label>
+
+    <label>
+      Ordenar por:
+      <select id="filtroOrdem">
+        <option value="created_at.desc">Mais recentes</option>
+        <option value="nota.desc">Melhor nota</option>
+      </select>
+    </label>
+  </div>
+
+  <ul id="lista"></ul>
+
+  <!-- Formulário de Cadastro (R2) -->
+  <form id="form">
+    <h2>Adicionar Nova Série</h2>
+    <input id="titulo" type="text" placeholder="Título da série" required>
+    
+    <select id="nota" required>
+      <option value="" disabled selected>Nota (1 a 5)</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+
+    <select id="statusSerie" required>
+      <option value="" disabled selected>Status</option>
+      <option value="na_fila">Na fila</option>
+      <option value="assistindo">Assistindo</option>
+      <option value="concluida">Concluída</option>
+    </select>
+
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
